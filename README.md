@@ -5,7 +5,7 @@ Vašou úlohou je naprogramovať zjednodušenú kartovú hru BANG ako **konzolov
 
 ## Úvod do hry
 
-Hráči sa nachádzajú na divokom západe, a kedže sa jedná o zjednodušenú verziu hry, tak bojujú všetci proti sebe. V našej zjednodušenej verzií hry nemáme ani postavy, ani zbrane a veľa dalších kariet s pôvodnej hry.
+Hráči sa nachádzajú na divokom západe, a kedže sa jedná o zjednodušenú verziu hry, tak bojujú všetci proti sebe. V našej zjednodušenej verzií hry nemáme ani postavy, ani zbrane a veľa dalších kariet z pôvodnej hry.
 
 ## Cieľ hry
 
@@ -38,34 +38,34 @@ Efekty jednotlivých kariet sú popísané nižšie.
 
 ## Príprava hry
 
-Hru môže hrať 2-4 hráčov. Každý hráč dostane na začiatku 4 karty z balíčka a začína zo 4 životmi. Horný počet životov obmedzený nie je. 
+Hru môže hrať 2-4 hráčov. Každý hráč dostane na začiatku 4 karty z balíčka a začína so 4 životmi. Horný počet životov obmedzený nie je. 
 
 ## Priebeh hry
 
-Hráči hrajú postupne v rade za sebou. Tah každého hráča sa delí na 3 časti, a to:
-* 1. Tahanie kariet - na začiatku svojho tahu si daný hráč potiahne 2 karty z balíčka. Pokiaľ má pred sebou nejakú efektovú kartu (Väzenie, Dynamit) tahá si najskôr ich efekt.
-* 2. Zahranie kariet - hráč môže zahrať ľubovolný počet kariet počas svojho tahu, tak isto ale nemusí zahrať žiadnu. Počas tohto tahu však musí byť splnené pravidlo, že pred hráčom môže ležať len jedna kópia každej karty (Príklad: Ak už má hráš pred sebou Barrel, nemôže pred seba vyložiť další).
+Hráči hrajú postupne v rade za sebou. Ťah každého hráča sa delí na 3 časti, a to:
+* 1. Tahanie kariet - na začiatku svojho ťahu si daný hráč potiahne 2 karty z balíčka. Pokiaľ má pred sebou nejakú efektovú kartu (Väzenie, Dynamit) vykonáva sa najskôr ich efekt.
+* 2. Zahranie kariet - hráč môže zahrať ľubovolný počet kariet počas svojho ťahu, tak isto ale nemusí zahrať žiadnu. Počas tohto ťahu však musí byť splnené pravidlo, že pred hráčom môže ležať len jedna kópia každej karty (Príklad: Ak už má hráč pred sebou Barrel, nemôže pred seba vyložiť ďalší).
 * 3. Odhadzovanie prebytočných kariet - hráč na konci svojho kola môže mať len toľko kariet v ruke, koľko má životov.
 
 ## Zabitie protivníka
 
-Ak niektorí z hráčov zomrie, musí vrátiť všetky karty z ruky a zo stola pred sebou naspať do odhadzovacieho balíčka. Ak hráč zomrie zavinením iného hráča, môžte vymyslieť odmenu danému hráčovi za zabitie (Napríklad že si potiahne 2 karty, táto úloha je nepovinná).
+Ak niektorí z hráčov zomrie, musí vrátiť všetky karty z ruky a zo stola pred sebou naspať do odhadzovacieho balíčka. Ak hráč zomrie zavinením iného hráča, môžte vymyslieť odmenu danému hráčovi za zabitie (Napríklad že si potiahne 2 karty. Táto úloha je nepovinná).
 
 ## Vysvetlenie jednotlivých kariet
 
 #### Bang a Vedľa
 
-Karty Bang predstavujú hlavný spôsob, ako znížiť počet životov svojim protihráčom. V našej zjednodušenej verzií hry môžete počas svojho tahu týchto kariet zahrať neobmedzene.
+Karty Bang predstavujú hlavný spôsob, ako znížiť počet životov svojim protihráčom. V našej zjednodušenej verzií hry môžete počas svojho ťahu týchto kariet zahrať neobmedzený počet.
 
-Pokiaľ se cielom karty Bang, môžete okamžite zahrať kartu vedľa, pokiaľ žiadnu nemáte, strácate život. Pokiaľ stratíte všetky životy, vypadávate z hry.
+Pokiaľ ste cielom karty Bang, automaticky zahráte kartu vedľa, pokiaľ žiadnu nemáte, strácate život. Pokiaľ stratíte všetky životy, vypadávate z hry.
 
-Príklad ťahu v našej zjednodušenej verzií hry: Hráč A zahrá kartu Bang na Hráča B, Hráč B sa automaticky skontroluje či má kartu vedľa, pokiaľ takú kartu má, karta sa automaticky zahrá, pokiaľ takú kartu nemá, prichádza o život.
+Príklad ťahu v našej zjednodušenej verzií hry: Hráč A zahrá kartu Bang na Hráča B, Hráč B automaticky skontroluje či má kartu vedľa, pokiaľ takú kartu má, karta sa automaticky zahrá, pokiaľ takú kartu nemá, prichádza o život.
 
 #### Barrel
 
 Barrel je karta, ktorá vám dáva šancu skryť sa pred útokom karty BANG. Šanca na skytie je 1 ku 4.
 
-Príklad tahu: Niektorí z hráčov na vás vystrelí kartou BANG, a vy máte pred sebou Barrel, môžete skontrolovať jeho efekt, a môže sa vám podariť sa vyhnúť výstrelu, pokiaľ sa vám podarí sa mu vyhnúť, dalšie vyhodenie karty vedľa nie je potrebné, ak sa mu nevyhnete, hra ďalej automaticky kontroluje či máte kartu vedľa.
+Príklad ťahu: Niektorí z hráčov na vás vystrelí kartou BANG, a vy máte pred sebou Barrel, môžete skontrolovať jeho efekt, a môže sa vám podariť sa vyhnúť výstrelu, pokiaľ sa vám podarí sa mu vyhnúť, dalšie vyhodenie karty vedľa nie je potrebné, ak sa mu nevyhnete, hra ďalej automaticky kontroluje či máte kartu vedľa.
 
 #### Pivo
 
@@ -77,7 +77,7 @@ Pomocou karty dostavník si hráč môže potiahnuť dve karty z balíčka.
 
 #### Indiáni
 
-Zahraním karty Indiáni spôsobíte útok indiánov na všetkých hráčov (okrem hráča ktorý ju zahral). Každý z hráčou musí odhodiť kartu *Bang* alebo príde o jeden život.
+Zahraním karty Indiáni spôsobíte útok indiánov na všetkých hráčov (okrem hráča ktorý ju zahral). Každý z hráčou odhodí kartu *Bang* (ak ju má) alebo príde o jeden život.
 
 #### Cat Balou
 
@@ -87,7 +87,7 @@ Príklad zahrania karty: Hráč A zahrá kartu Cat Balou na Hráča B, hra mu po
 
 #### Väzenie
 
-Túto kartu dávate pred ľubovoného hráča, a danou kartou ho uväzníte. Pokiaľ má hráč pred začiatkom svojho kola pred sebou kartu Väzenie, musí skontrolovať jej efekt, či sa mu podarí z neho ujst alebo nie. Šanca na újdenie z väzenia je 1 ku 4. Ak sa mu z väzenia nepodarí ujst, vynecháva dané kolo, pokiaľ z neho ujde, pokračuje v svojom tahu. V oboch prípadoch sa karta po kontrole jej efektu vyhadzuje do odhadzovacieho balíčka.
+Túto kartu dávate pred ľubovoného iného hráča, a danou kartou ho uväzníte. Pokiaľ má hráč pred začiatkom svojho kola pred sebou kartu Väzenie, musí skontrolovať jej efekt, či sa mu podarí z neho ujsť alebo nie. Šanca na újdenie z väzenia je 1 ku 4. Ak sa mu z väzenia nepodarí ujsť - vynecháva dané kolo, pokiaľ z neho ujde, pokračuje vo svojom ťahu. V oboch prípadoch sa karta po kontrole jej efektu vyhadzuje do odhadzovacieho balíčka.
 
 #### Dynamit
 
@@ -125,7 +125,7 @@ Niektoré z vecí, za ktoré sme minulý rok strhli po 0,5 - 1 bode:
 * Spadnutie hry na nejakej Exception
 * Inicializácia objektov priamo v mieste ich vytvorenia a nie v ich konštruktoroch
 * Nevhodné modifikátory prístupu
-* Nevypísanie vítaza na konci hry
+* Nevypísanie víťaza na konci hry
 
 Prípadne sú pri nedostatočnej implementácií struhnuté body za OOP za nedostatočnú implementáciu.
 
@@ -133,15 +133,14 @@ Prípadne sú pri nedostatočnej implementácií struhnuté body za OOP za nedos
 
 ## Odovzdávanie
 Zadanie si naklonujte z repozitára zadania výhradne pomocou poskytnutej linky cez GitHub Classroom (pokiaľ si vygenerujete vlastný repozitár pomocou tlačidla "Use this template" z template repozitára, my váš repozitár neuvidíme a nebudeme ho hodnotiť!). Svoje vypracovanie nahrajte do pre vás vytvoreného repozitára pre toto zadanie pomocou programu Git (git commit + git push).
-Skontrolujte si, či sa váš repozitár nachádza pod skupinov **Interes-Group**, inak nemáme prístup ku vášmu repozitáru a zadanie sa nepovažuje za odovzdané. Vypracovanie môžete "pusho-vať" priebežne. Hodnotiť sa bude iba _master_ branch. Zadanie je nutné vypracovať do **26.3.2023 23:00**. Hodnotený je posledný commit pred deadlinom.
+Skontrolujte si, či sa váš repozitár nachádza pod skupinov **Interes-Group**, inak nemáme prístup ku vášmu repozitáru a zadanie sa nepovažuje za odovzdané. Vypracovanie môžete "push-ovať" priebežne. Hodnotiť sa bude iba _master_ branch. Zadanie je nutné vypracovať do **26.3.2023 23:00**. Hodnotený je posledný commit pred deadline-om.
 
-V projekte upravujte iba súbory v priečinku _src/main_ a jeho podpriečinkoch. Ostatné súbory je upravovať zakázané (predovšetkým súbory _pom.xml_, súbory obsahujúce github pipeline-y a súbory obsahujúce automatizované testy).
+V projekte upravujte iba súbory v priečinku _src/main_ a jeho podpriečinkoch. Ostatné súbory je upravovať zakázané (predovšetkým súbory _pom.xml_, súbory obsahujúce github pipeline-y a súbory obsahujúce automatizované testy (ak sú súčasťou zadania)).
 
 Vo svojom github účte si nastavte svoje meno alebo AIS login (settings > profile > name), aby bolo možné priradiť riešenie ku študentovy. **Pokiaľ nebude možné spárovať študenta s riešením je zadanie hodnotené 0 bodmi!**
 
 ## Zdroje (pre lepšie pochopenie zadania)
 * [Pravidlá pôvodnej hry](https://eshop.albi.cz/data/files/products/24327/1603711687-bang-pravidla-zakladni-hry.pdf)
-* [Krátke video o pôvodnej hry](https://www.youtube.com/watch?v=6pQn0A1S6Eg)
 
 # --------------------------------
 # Assignment 1 - BANG Lite
@@ -287,5 +286,5 @@ Only edit files in the _src/main_ folder or its sub-folders. You mustn't change 
 
 You have to have your name set in your github account (settings > profile > name), so that we can match students with their assignments. **If we are unable to match a student with their assignment, the student will receive 0 points for the assignment!**
 
-## Resources (for better understanding of assignment)
+## Resources (for better understanding of the assignment)
 * [Rules of the original game](https://www.ultraboardgames.com/bang/game-rules.php)
