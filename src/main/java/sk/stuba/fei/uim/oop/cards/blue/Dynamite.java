@@ -26,10 +26,8 @@ public class Dynamite extends BlueCard {
     @Override
     public boolean controlEffect(Player activePlayer, List<Player> players) {
         if (random.nextInt(8) == 0) {
-            System.out.println(activePlayer.getName() + " is blown by Dynamite, losing 3 lives!");
-            activePlayer.lostLife();
-            activePlayer.lostLife();
-            activePlayer.lostLife();
+            System.out.println(activePlayer.getName() + " is blown up by Dynamite, losing 3 lives!");
+            activePlayer.lostLife(3);
             if (!activePlayer.isActive()) {
                 System.out.println(activePlayer.getName() + " died on Dynamite!");
                 activePlayer.returnCardsAfterDeath();

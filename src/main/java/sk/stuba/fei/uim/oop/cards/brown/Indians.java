@@ -26,6 +26,7 @@ public class Indians extends Card {
                 defender.lostLife();
                 if (!defender.isActive()) {
                     System.out.println(attacker.getName() + " kills " + defender.getName());
+                    defender.returnCardsAfterDeath();
                 }
             }
         }

@@ -2,7 +2,6 @@ package sk.stuba.fei.uim.oop.bang;
 
 import sk.stuba.fei.uim.oop.cards.Card;
 import sk.stuba.fei.uim.oop.cards.blue.Barrel;
-import sk.stuba.fei.uim.oop.cards.blue.BlueCard;
 import sk.stuba.fei.uim.oop.cards.blue.Dynamite;
 import sk.stuba.fei.uim.oop.cards.blue.Prison;
 import sk.stuba.fei.uim.oop.cards.brown.*;
@@ -82,21 +81,8 @@ public class Bang {
             }
             this.printPlayerInfo(activePlayer);
 
-            boolean stillPlay;
-            stillPlay = this.checkDynamite(activePlayer);
-            if (stillPlay) {
-                stillPlay = this.checkPrison(activePlayer);
-            }
-            if (this.cardsPackage.size() < 3 && stillPlay) {
-                this.shuffleCards();
-                if (this.cardsPackage.size() > 1) {
-                    activePlayer.drawCards(this.cardsPackage, 2);
-                } else {
-                    System.out.println("Cant draw cards on start of the turn, because there isnt enough cards, skipping drawing cards");
-                }
-            } else if (stillPlay) {
-                activePlayer.drawCards(this.cardsPackage, 2);
-            }
+            boolean stillPlay = activePlayer.canPlayRound(this.getActivePlayers());
+            this.turnDrawCards(activePlayer, stillPlay);
 
             while (stillPlay) {
                 if (this.getActivePlayers().size() < 2) {
@@ -111,22 +97,18 @@ public class Bang {
         System.out.println("And the WINNER is " + getActivePlayers().get(0).getName());
     }
 
-    private boolean checkDynamite(Player activePlayer) {
-        for (BlueCard card : activePlayer.getCardsOnTable()) {
-            if (card instanceof Dynamite) {
-                return card.controlEffect(activePlayer, this.getActivePlayers());
+    private void turnDrawCards(Player activePlayer, boolean stillPlay) {
+        if (this.cardsPackage.size() < 3 && stillPlay) {
+            this.shuffleCards();
+            if (this.cardsPackage.size() > 1) {
+                activePlayer.drawCards(this.cardsPackage, 2);
+            } else {
+                System.out.println("Cant draw 2 cards on start of the turn, because there isnt enough cards, drawing " + this.cardsPackage.size() + " cards.");
+                activePlayer.drawCards(this.cardsPackage, this.cardsPackage.size());
             }
+        } else if (stillPlay) {
+            activePlayer.drawCards(this.cardsPackage, 2);
         }
-        return true;
-    }
-
-    private boolean checkPrison(Player activePlayer) {
-        for (BlueCard card : activePlayer.getCardsOnTable()) {
-            if (card instanceof Prison) {
-                return card.controlEffect(activePlayer, this.getActivePlayers());
-            }
-        }
-        return true;
     }
 
     private void printPlayerInfo(Player activePlayer) {

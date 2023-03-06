@@ -44,6 +44,7 @@ public class BangCard extends Card {
             defender.lostLife();
             if (!defender.isActive()) {
                 System.out.println(attacker.getName() + " kills " + defender.getName());
+                defender.returnCardsAfterDeath();
             }
         }
         attacker.removeCardFromHand(this);

@@ -2,6 +2,8 @@ package sk.stuba.fei.uim.oop.player;
 
 import sk.stuba.fei.uim.oop.cards.Card;
 import sk.stuba.fei.uim.oop.cards.blue.BlueCard;
+import sk.stuba.fei.uim.oop.cards.blue.Dynamite;
+import sk.stuba.fei.uim.oop.cards.blue.Prison;
 import sk.stuba.fei.uim.oop.utility.ZKlavesnice;
 
 import java.util.ArrayList;
@@ -38,6 +40,10 @@ public class Player {
 
     public void lostLife() {
         this.lives -= 1;
+    }
+
+    public void lostLife(int numOfLives) {
+        this.lives -= numOfLives;
     }
 
     public void addLife() {
@@ -104,5 +110,31 @@ public class Player {
         for (int i = 0; i < number; i++) {
             this.cards.add(cardsPackage.remove(cardsPackage.size()-1));
         }
+    }
+
+    private boolean checkDynamite(ArrayList<Player> activePlayers) {
+        for (BlueCard card : this.getCardsOnTable()) {
+            if (card instanceof Dynamite) {
+                return card.controlEffect(this, activePlayers);
+            }
+        }
+        return true;
+    }
+
+    private boolean checkPrison(ArrayList<Player> activePlayers) {
+        for (BlueCard card : this.getCardsOnTable()) {
+            if (card instanceof Prison) {
+                return card.controlEffect(this, activePlayers);
+            }
+        }
+        return true;
+    }
+
+    public boolean canPlayRound(ArrayList<Player> activePlayers) {
+        boolean stillPlay = this.checkDynamite(activePlayers);
+        if (stillPlay) {
+            stillPlay = this.checkPrison(activePlayers);
+        }
+        return stillPlay;
     }
 }
