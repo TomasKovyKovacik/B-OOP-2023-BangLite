@@ -6,7 +6,9 @@ import sk.stuba.fei.uim.oop.cards.blue.Dynamite;
 import sk.stuba.fei.uim.oop.cards.blue.Prison;
 import sk.stuba.fei.uim.oop.utility.ZKlavesnice;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Player {
 
@@ -15,6 +17,7 @@ public class Player {
     private ArrayList<Card> disposalPackage;
     private ArrayList<Card> cards;
     private ArrayList<BlueCard> cardsOnTable;
+    private Random random;
 
     public Player(String name, ArrayList<Card> disposalPackage) {
         this.name = name;
@@ -22,6 +25,7 @@ public class Player {
         this.lives = 4;
         this.cards = new ArrayList<>();
         this.cardsOnTable = new ArrayList<>();
+        this.random = new Random();
     }
 
     public void removeCardFromHand(Card card) {
@@ -136,5 +140,14 @@ public class Player {
             stillPlay = this.checkPrison(activePlayers);
         }
         return stillPlay;
+    }
+
+    public void dropCards(int i) {
+        System.out.println("Dropping " + i + " cards, because you have more cards than lives!");
+        for (int j = 0; j < i; j++) {
+            Card card = this.cards.get(this.random.nextInt(this.cards.size()-1));
+            System.out.println("Dropping " + card.getName());
+            this.removeCardFromHand(card);
+        }
     }
 }

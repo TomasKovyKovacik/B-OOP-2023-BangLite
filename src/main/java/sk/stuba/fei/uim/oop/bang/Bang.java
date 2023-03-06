@@ -1,5 +1,6 @@
 package sk.stuba.fei.uim.oop.bang;
 
+import sk.stuba.fei.uim.oop.board.Board;
 import sk.stuba.fei.uim.oop.cards.Card;
 import sk.stuba.fei.uim.oop.cards.blue.Barrel;
 import sk.stuba.fei.uim.oop.cards.blue.Dynamite;
@@ -13,13 +14,11 @@ import java.util.Collections;
 
 public class Bang {
     private final Player[] players;
-    private ArrayList<Card> cardsPackage;
-    private ArrayList<Card> disposalPackage;
+    private Board board;
     private int currentPlayer;
     private int roundCounter;
 
     public Bang() {
-        this.disposalPackage = new ArrayList<>();
         System.out.println("*** Welcome to Bang game, OOP Version ***");
 
         int numberPlayers = 0;
@@ -30,46 +29,16 @@ public class Bang {
             }
         }
         this.players = new Player[numberPlayers];
+        this.board = new Board();
         for (int i = 0; i < numberPlayers; i++) {
             this.players[i] = new Player(ZKlavesnice.readString("Enter name for PLAYER " + (i + 1)
-                    + " :"), this.disposalPackage);
+                    + " :"), this.board.getDisposalPackage());
         }
 
-        this.initializeGame();
         this.startGame();
     }
 
-    private void initializeGame() {
-        this.cardsPackage = new ArrayList<>();
-        for (int i = 0; i < 30; i++){
-            this.cardsPackage.add(new BangCard());
-            if (i < 15) {
-                this.cardsPackage.add(new Dodge());
-            }
-            if (i < 8) {
-                this.cardsPackage.add(new Beer());
-            }
-            if (i < 6) {
-                this.cardsPackage.add(new CatBalou());
-            }
-            if (i < 4) {
-                this.cardsPackage.add(new Cargo(this.cardsPackage));
-            }
-            if (i < 3) {
-                this.cardsPackage.add(new Indians());
-            }
-            if (i < 3) {
-                this.cardsPackage.add(new Prison());
-            }
-            if (i < 2) {
-                this.cardsPackage.add(new Barrel());
-            }
-            if (i < 1) {
-                this.cardsPackage.add(new Dynamite());
-            }
-        };
-        Collections.shuffle(this.cardsPackage);
-    }
+
 
     private void startGame() {
         System.out.println("*** GAME STARTED ***");
@@ -92,34 +61,31 @@ public class Bang {
                 temp.removeIf(o -> o.equals(activePlayer));
                 stillPlay = activePlayer.playCards(temp.toArray(new Player[0]));
             }
+            if (activePlayer.getLives() < activePlayer.getCards().size()) {
+                activePlayer.dropCards(activePlayer.getCards().size() - activePlayer.getLives());
+            }
         }
         System.out.println("--- GAME FINISHED ---");
         System.out.println("And the WINNER is " + getActivePlayers().get(0).getName());
     }
 
     private void turnDrawCards(Player activePlayer, boolean stillPlay) {
-        if (this.cardsPackage.size() < 3 && stillPlay) {
-            this.shuffleCards();
-            if (this.cardsPackage.size() > 1) {
-                activePlayer.drawCards(this.cardsPackage, 2);
+        if (this.board.getCardsPackage().size() < 3 && stillPlay) {
+            this.board.shuffleCards();
+            if (this.board.getCardsPackage().size() > 1) {
+                activePlayer.drawCards(this.board.getCardsPackage(), 2);
             } else {
-                System.out.println("Cant draw 2 cards on start of the turn, because there isnt enough cards, drawing " + this.cardsPackage.size() + " cards.");
-                activePlayer.drawCards(this.cardsPackage, this.cardsPackage.size());
+                System.out.println("Cant draw 2 cards on start of the turn, because there isnt enough cards, drawing " + this.board.getCardsPackage().size() + " cards.");
+                activePlayer.drawCards(this.board.getCardsPackage(), this.board.getCardsPackage().size());
             }
         } else if (stillPlay) {
-            activePlayer.drawCards(this.cardsPackage, 2);
+            activePlayer.drawCards(this.board.getCardsPackage(), 2);
         }
     }
 
     private void printPlayerInfo(Player activePlayer) {
         System.out.println("--- PLAYER " + activePlayer.getName() + " STARTS TURN ---");
         System.out.println("Players lives: " + activePlayer.getLives());
-    }
-
-    private void shuffleCards() {
-        this.cardsPackage.addAll(this.disposalPackage);
-        this.disposalPackage.clear();
-        Collections.shuffle(this.cardsPackage);
     }
 
     private Player roundCounter() {
@@ -131,7 +97,7 @@ public class Bang {
 
     private void startDrawCards() {
         for (int i = 0; i < this.players.length;i++) {
-            this.players[i].drawCards(this.cardsPackage, 4);
+            this.players[i].drawCards(this.board.getCardsPackage(), 4);
         }
     }
 
