@@ -4,11 +4,11 @@ import sk.stuba.fei.uim.oop.board.Board;
 import sk.stuba.fei.uim.oop.cards.Card;
 import sk.stuba.fei.uim.oop.player.Player;
 
-public class Cargo extends Card {
+public class Stagecoach extends Card {
     private Board board;
 
-    public Cargo(Board board) {
-        super("Cargo");
+    public Stagecoach(Board board) {
+        super("Stagecoach");
         this.board = board;
     }
 

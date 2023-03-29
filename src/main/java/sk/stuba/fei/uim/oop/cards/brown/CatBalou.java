@@ -29,14 +29,18 @@ public class CatBalou extends Card {
         } while (cardsChoose != 1 &&  cardsChoose != 2);
         if (cardsChoose == 1) {
             if (defender.getCardsOnTable().size() > 0) {
-                defender.removeCardFromTable(defender.getCardsOnTable().get(this.random.nextInt(defender.getCardsOnTable().size())));
+                Card card = defender.getCardsOnTable().get(this.random.nextInt(defender.getCardsOnTable().size()));
+                defender.removeCardFromTable(card);
+                System.out.println("You throw away a " + card.getName() + " card from Player " + defender.getName());
                 player.removeCardFromHand(this);
             } else {
                 System.out.println("Cant use this card on Table Cards, please use another card");
             }
         } else {
             if (defender.getCards().size() > 0) {
-                defender.removeCardFromHand(defender.getCards().get(this.random.nextInt(defender.getCards().size())));
+                Card card = defender.getCards().get(this.random.nextInt(defender.getCards().size()));
+                defender.removeCardFromHand(card);
+                System.out.println("You throw away a " + card.getName() + " card from Player " + defender.getName());
                 player.removeCardFromHand(this);
             } else {
                 System.out.println("Cant use this card on Cards in hand, please use another card");

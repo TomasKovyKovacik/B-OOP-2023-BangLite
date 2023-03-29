@@ -5,8 +5,6 @@ import sk.stuba.fei.uim.oop.cards.blue.BlueCard;
 import sk.stuba.fei.uim.oop.cards.blue.Dynamite;
 import sk.stuba.fei.uim.oop.cards.blue.Prison;
 import sk.stuba.fei.uim.oop.utility.ZKlavesnice;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -64,10 +62,6 @@ public class Player {
 
     public int getLives() {
         return lives;
-    }
-
-    public ArrayList<Card> getDisposalPackage() {
-        return disposalPackage;
     }
 
     public ArrayList<Card> getCards() {

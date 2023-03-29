@@ -46,7 +46,7 @@ public class Board {
                 this.cardsPackage.add(new CatBalou());
             }
             if (i < 4) {
-                this.cardsPackage.add(new Cargo(this));
+                this.cardsPackage.add(new Stagecoach(this));
             }
             if (i < 3) {
                 this.cardsPackage.add(new Indians());

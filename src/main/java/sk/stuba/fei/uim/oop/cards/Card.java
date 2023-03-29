@@ -21,10 +21,10 @@ public abstract class Card {
         int playerNum;
         do {
             playerNum = ZKlavesnice.readInt("On which player do you want to play card? (enter number)");
-            if (0 > playerNum || playerNum > players.length ) {
+            if (0 >= playerNum || playerNum > players.length ) {
                 System.out.println("Wrong number of player, please try again!");
             }
-        } while (0 > playerNum || playerNum > players.length);
+        } while (0 >= playerNum || playerNum > players.length);
         return players[playerNum-1];
     }
 

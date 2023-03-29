@@ -144,13 +144,13 @@ Vo svojom github účte si nastavte svoje meno alebo AIS login (settings > profi
 
 # --------------------------------
 # Assignment 1 - BANG Lite
-B-OOP 2022
+B-OOP 2023
 
 Your task is to create a simplified version of card game "BANG" as a **console** game in Java.
 
 ## Introduction to the game
 
-The players are in the wild west, and since this is a simplified version of the game, they all fight against each other. In our simplified version of the game, we have neither characters nor weapons and many other cards from the original game.
+The players are in the wild west, and since this is a simplified version of the game, they all fight against each other. In our simplified version of the game, we have neither characters nor weapons and also we don't have many other cards from the original game.
 
 ## Goal of the game
 
@@ -173,7 +173,7 @@ After playing blue card, blue card lie in front of the player, and their effect 
 Brown cards have an immediate effect and are immediately discarded into the discard pile after being played.
 
 * 30x Bang
-* 15x Dodge
+* 15x Missed
 * 8x Beer
 * 6x Cat Balou
 * 4x Stagecoach
@@ -188,29 +188,29 @@ The game can be played by 2-4 players. Each player starts with 4 cards from the 
 ## The course of the game
 
 Players play sequentially in a row. Each player's turn is divided into 3 parts:
-* 1. Drawing cards - at the beginning of his turn, the given player draws 2 cards from the deck. If he has an blue card (Prison, Dynamite) in front of him, he control their effect first.
-* 2. Playing cards - the player can play any number of cards during his turn, but he does not have to play any. During this move, however, the rule must be fulfilled that only one copy of each card can lie in front of the player (Example: If you already have a Barrel in front of you, you cannot place another one in front of you).
+* 1. Drawing cards - at the beginning of his turn, the given player draws 2 cards from the deck. If he has blue cards (Prison, Dynamite) in front of him, their effect is excecuted as first.
+* 2. Playing cards - the player can play any number of cards during his turn, but he does not have to play any. During the move, however, the rule must be fulfilled that only one copy of each card can lie in front of the player (Example: If you already have a Barrel in front of you, you cannot place another one in front of you).
 * 3. Discarding excess cards - a player can only have as many cards in his hand as he has lives at the end of his turn.
 
 ## Killing an opponent
 
-If any of the players die, they must return all the cards from their hand and put them in the discard pile from the table in front of them. If a player dies due to be killed by another player, you can come up with a reward for that player for the kill (For example, he draws 2 cards, this task is optional).
+If any of the players die, they must return all the cards from their hand and from the table in front of them and put them in the discard pile. If a player is killed by another player, you can come up with a reward for the player who did kill (For example, he draws 2 cards, this task is optional).
 
 ## Explanation of individual cards
 
-#### Bang and Dodge
+#### Bang and Missed
 
 Bang cards are the main way to reduce the health of your opponents. In our simplified version of the game, you can play an unlimited number of these cards during your turn.
 
-If you target a Bang card, you can immediately play a card Dodge to it, if you don't have one, you lose a life. If you lose all lives, you are out of the game.
+If you are a target of a Bang card, you can immediately play a card Missed to discard the effect of the Bang card, if you don't have one, you lose a life. If you lose all lives, you are out of the game.
 
-An example of a move in our simplified version of the game: Player A plays a Bang card to Player B, Player B automatically checks if he has a card Dodge on hand, if he has such a card, the card is automatically played, if he does not have, he loses a life.
+An example of a move in our simplified version of the game: Player A plays a Bang card to Player B, Player B automatically checks if he has a card Missed on hand, if he has such a card, the card is automatically played, if he does not have, he loses a life.
 
 #### Barrel
 
 Barrel is a card that gives you a chance to hide from a BANG card attack. The chance of a Barrel is 1 in 4.
 
-Example move: Some of the players shoot a BANG card at you, and you have a Barrel in front of you, you can check its effect, and you may manage to avoid the shot, as long as you manage to avoid it, another discard of Dodge card is not necessary, if you cannot avoid it, the game automatically checks whether you have a card Dodge.
+Example move: Some of the players shoot a BANG card at you, and you have a Barrel in front of you, you can check its effect, and you may manage to avoid the shot, as long as you manage to avoid it, another discard of Missed card is not necessary, if you cannot avoid it, the game automatically checks whether you have a card Missed.
 
 #### Beer
 
@@ -222,13 +222,13 @@ Using the stagecoach card, the player can draw two cards from the deck.
 
 #### Indians
 
-By playing the Indians card, you cause an Indian attack on all players (except the player who played it). Each player must discard a *Bang* card or lose one life.
+By playing the Indians card, you cause an Indian attack on all players (except the player who played it). Each player must use a *Bang* card or lose one life.
 
 #### Cat Balou
 
-By playing this card, you can discard a card to your opponent, either from the table or from your hand.
+By playing this card, you can discard a card of your opponent, either from the table or from your hand.
 
-Example of playing a card: Player A plays the Cat Balou card to Player B, the game offers him whether he wants to discard a card from his hand or from the table, and after the given choice, a randomly selected card is automatically discarded to Player B. If Player B has no card, Player A will be shown a message that he cannot currently play this card on that player.
+Example of playing a card: Player A plays the Cat Balou card to Player B, the game offers him whether he wants to discard a card from his hand or from the table, and after the given choice, a randomly selected card is automatically discarded from Player B. If Player B has no cards, Player A will be shown a message that he cannot currently play this card on that player.
 
 #### Prison
 
@@ -245,7 +245,8 @@ You can get 10 points for this assignment. 5 points are given for fulfilling the
 
 The github pipeline checks whether the program can be compiled. The main focus during grading is put on object-oriented approach and OOP principles used by the solution.
 
-Including, but not limited to:
+Also it is important to fulfill the following criteria:
+
 * appropriate naming of classes, methods and variables in a single language (class names starting with a capital letter, method names starting with a lowercase letter),
 * appropriate use of access modifiers (public, private, or protected) when restricting access to class methods and attributes, the use of inheritance and polymorphism,
 * usage of exceptions when handling undesired behavior (do not catch or throw the instances of the generic Exception class),
@@ -257,7 +258,7 @@ Issues that resulted in a 0.5 - 1 point reduction last year:
 * deciding the card effect with if/switch statements (should be done trough inheritance)
 * unchecked inputs
 * code in the Main class (we should only start the game here)
-* no use of inheritance
+* no use of inheritance (you should use inheritance)
 * static variables
 * bad package naming
 * non-conventional naming of classes and variables
@@ -274,7 +275,7 @@ If the assignment lacks a substantial part of the specified functionality additi
 
 **The originality of the code is checks, all assignments with a more than 80% match are awarded with 0 points.**
 
-## Handing in the assigment
+## Submission
 
 Clone the assignment from the repository created from this template by the provided link trough GitHub Classroom (if you create your own repository with the "use this template" button, we won't be able to see your repository, and we won't be able to grade it!). Upload your solutions to your repository using the Git version control system (git commit + git push).
 

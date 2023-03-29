@@ -61,7 +61,7 @@ public class Bang {
                 temp.removeIf(o -> o.equals(activePlayer));
                 stillPlay = activePlayer.playCards(temp.toArray(new Player[0]));
             }
-            if (activePlayer.getLives() < activePlayer.getCards().size()) {
+            if (activePlayer.getLives() < activePlayer.getCards().size() && activePlayer.isActive()) {
                 activePlayer.dropCards(activePlayer.getCards().size() - activePlayer.getLives());
             }
         }
@@ -96,8 +96,8 @@ public class Bang {
     }
 
     private void startDrawCards() {
-        for (int i = 0; i < this.players.length;i++) {
-            this.players[i].drawCards(this.board.getCardsPackage(), 4);
+        for (Player player : this.players) {
+            player.drawCards(this.board.getCardsPackage(), 4);
         }
     }
 
